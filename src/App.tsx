@@ -1,37 +1,10 @@
 import { useRef, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Modal from 'react-modal';
-Modal.setAppElement('#root');
 function App() {
   const r= useRef(null);
-  const [count, setCount] = useState(0)
-  const [modalIsOpen, setIsOpen] = useState(false);
   const [showButton, setShowButton] = useState(true);
-  const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
-    },
-  };
   const onClickMe=()=>{
     setShowButton(false);
-  }
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  function afterOpenModal() {
-    
-  }
-
-  function closeModal() {
-    setIsOpen(false);
   }
 
   function deleteForever(){
@@ -81,24 +54,6 @@ function App() {
           </div>
         </div>
       </div>}
-      {/* <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
-      >
-        <h2>Hello</h2>
-        <button onClick={closeModal}>close</button>
-        <div>I am a modal</div>
-        <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
-        </form>
-      </Modal> */}
     </div>
   )
 }
